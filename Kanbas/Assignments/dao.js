@@ -9,7 +9,7 @@ export async function findAssignmentsForCourse(courseId) {
 }
 
 export async function createAssignment(assignment) {
-  assignment = { ...assignment, course: new mongoose.Types.ObjectId(assignment.course) };
+  assignment = { ...assignment };
   const newAssignment = new model({ ...assignment });
   return await newAssignment.save();
 }
